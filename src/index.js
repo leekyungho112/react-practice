@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import IndexProvider from './context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <IndexProvider>
-      <App />
-    </IndexProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,31 +1,15 @@
-import React, { useReducer } from 'react';
-import CountButton from './components/CountButton';
-import LangButton from './components/LangButton';
-import { buttonContext, initialState, reducer } from './reducer';
-
+import React from 'react';
+import Coins from './components/Coins';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Detail from './components/Detail';
 function App() {
-  // const [count, setCount] = useState(0);
-  // const [lang, setLang] = useState('안녕하세요');
-  // const handleKor = () => {
-  //   setLang('하하하하');
-  // };
-  // const handleEng = () => {
-  //   setLang('Hello');
-  // };
-  // const handleIncrease = () => {
-  //   setCount(count + 1);
-  // };
-
-  // const handleDecrease = () => {
-  //   setCount(count - 1);
-  // };
   return (
-    // <buttonContext.Provider value={useReducer(reducer, initialState)}>
-    <>
-      <LangButton />
-      <CountButton />
-    </>
-    // </buttonContext.Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Coins />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
